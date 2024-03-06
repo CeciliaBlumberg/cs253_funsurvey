@@ -1,22 +1,39 @@
 {% extends "layout.html" %}
 {% block body %}
-    <h1 class="title">{{ title }}</h1>
-    <h2 class="subtitle">Question</h2>
-    Question: {{ qtext }}
-
-    <div class = "descriptives">
-    <h2 class="subtitle">Descriptives</h2>
-        {{ descrip|safe }}
+    <div style="margin:20px;" >
+    <div class="row">
+    <h1 class="title  text-center display-1 text-primary">{{ title }}</h1>
+    <div class="text-bg-secondary">
+    <h2 class="subtitle ]">Question</h2>
+        <p>{{ qtext }}</p>
     </div>
 
+    <br>
+        <br>
+    <br>
+    <br>
+        <div class="row">
+        <div class="col-6 bg-light">
+    <div class="descriptives">
+    <h2 class="subtitle ">Descriptives</h2>
+        {{ descrip|safe }}
+    </div>
+        </div>
+
+    <br>
+        <div class="col-6 bg-light">
     <div class = "value counts">
     <h2 class="subtitle">Value Counts</h2>
         {{ value_counts|safe }}
     </div>
+        </div>
+    </div>
 
+    <br>
     <div class = "chart">
-    <h2 class="subtitle">Chart</h2>
-    <img src="{{ chart_url }}" alt="Count Plot {{ title }}">
+    <h2 class="text-center display-3 subtitle">Chart</h2>
+    <img class="mx-auto d-block" src="{{ chart_url }}" alt="Count Plot {{ title }}">
+    </div>
     </div>
 
 {% endblock %}
